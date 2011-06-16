@@ -25,8 +25,8 @@ describe Stock do
     toolong.should_not be_valid
   end
 
-#  it "should never have ex_date come after pay_date" do
- #   ex = Stock.new(@attr.merge(:ex_date => DateTime.now + 21.days))
-  #  ex.ex_date.should_not > ex.pay_date
- # end
+  it "should never have ex_date come after pay_date" do
+    ex = Stock.new(@attr.merge(:ex_date => DateTime.now + 21.days))
+    (ex.ex_date > ex.pay_date).should_not be_valid
+  end
 end
