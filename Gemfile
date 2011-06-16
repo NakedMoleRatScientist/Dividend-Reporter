@@ -14,6 +14,8 @@ gem 'sass-rails'
 gem 'coffee-script'
 gem 'uglifier'
 
+gem 'execjs'
+gem 'therubyracer'
 gem 'jquery-rails'
 
 
