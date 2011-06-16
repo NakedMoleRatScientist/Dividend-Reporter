@@ -11,4 +11,7 @@ describe Stock do
       :pay_date => Date.now + 20.days
     }
   end
+  it "should validates with proper values" do
+    Stock.create!(@attr)
+  end
 end
