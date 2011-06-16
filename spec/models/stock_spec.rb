@@ -27,6 +27,6 @@ describe Stock do
 
   it "should never have ex_date come after pay_date" do
     ex = Stock.new(@attr.merge(:ex_date => DateTime.now + 21.days))
-    (ex.ex_date > ex.pay_date).should_not be_valid
+    ex.should_not be_valid
   end
 end
