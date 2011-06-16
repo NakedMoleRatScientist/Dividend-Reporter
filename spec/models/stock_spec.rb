@@ -19,4 +19,14 @@ describe Stock do
     empty = Stock.new(@attr.merge(:symbol => ""))
     empty.should_not be_valid
   end
+
+  it "should not validates when symbol is six characters or longer" do
+    toolong = Stock.new(@attr.merge(:symbol => "ASDFASDF"))
+    toolong.should_not be_valid
+  end
+
+  it "should not be lowercase" do
+    undercase = Stock.new(@attr.merge(:symbol => "kr"))
+    undercase.should_not be_valid
+  end
 end
