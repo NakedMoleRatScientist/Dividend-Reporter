@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rails/rails.git
-  revision: f2c0fb32c0dce7f8da0ce446e2d2f0cba5fd44b3
+  revision: a788d4e6e9c2dd40db4d3bebf40703da6deeb6e7
   specs:
     actionmailer (3.1.0.rc1)
       actionpack (= 3.1.0.rc1)
@@ -52,11 +52,9 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    addressable (2.2.6)
     ansi (1.2.5)
     arel (2.1.1)
-    authlogic (3.0.3)
-      activerecord (>= 3.0.7)
-      activerecord (>= 3.0.7)
     bcrypt-ruby (2.1.4)
     builder (3.0.0)
     coffee-script (2.2.0)
@@ -73,6 +71,10 @@ GEM
     erubis (2.7.0)
     execjs (1.1.3)
       multi_json (~> 1.0)
+    faraday (0.6.1)
+      addressable (~> 2.2.4)
+      multipart-post (~> 1.1.0)
+      rack (< 2, >= 1.1.0)
     gherkin (2.4.0)
       json (>= 1.4.6)
     hike (1.1.0)
@@ -87,9 +89,14 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multi_json (1.0.3)
+    multipart-post (1.1.2)
     nas-yahoo_stock (1.0.8)
       builder (>= 2.1.2)
     nokogiri (1.4.5)
+    oauth (0.4.4)
+    oauth2 (0.4.1)
+      faraday (~> 0.6.1)
+      multi_json (>= 0.0.5)
     polyglot (0.3.1)
     rack (1.3.0)
     rack-cache (1.0.2)
@@ -121,6 +128,12 @@ GEM
       railties (~> 3.1.0.rc1)
       sass (>= 3.1.2)
       sprockets (>= 2.0.0.beta.9)
+    sorcery (0.5.21)
+      bcrypt-ruby (~> 2.1.4)
+      oauth (>= 0.4.4)
+      oauth (>= 0.4.4)
+      oauth2 (>= 0.1.1)
+      oauth2 (>= 0.1.1)
     sprockets (2.0.0.beta.10)
       hike (~> 1.0)
       rack (~> 1.0)
@@ -146,7 +159,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  authlogic
   coffee-script
   cucumber
   jquery-rails
@@ -155,6 +167,7 @@ DEPENDENCIES
   rspec
   rspec-rails (~> 2.6.1)
   sass-rails
+  sorcery
   sqlite3
   turn
   uglifier
