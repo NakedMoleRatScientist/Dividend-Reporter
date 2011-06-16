@@ -1,4 +1,4 @@
 DividendReporter::Application.routes.draw do
-  resources :stock
+  resources :stocks
   resources :users
 end
