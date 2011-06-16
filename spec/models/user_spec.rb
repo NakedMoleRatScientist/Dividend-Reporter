@@ -9,4 +9,7 @@ describe User do
       :password_confirmation => "foobar"
     }
   end
+  it "should create a user with valid attributes" do
+    User.create!(@attr)
+  end
 end
