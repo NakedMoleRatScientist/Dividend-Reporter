@@ -24,9 +24,4 @@ describe Stock do
     toolong = Stock.new(@attr.merge(:symbol => "ASDFASDF"))
     toolong.should_not be_valid
   end
-
-  it "should not be lowercase" do
-    undercase = Stock.new(@attr.merge(:symbol => "kr"))
-    undercase.should_not be_valid
-  end
 end
