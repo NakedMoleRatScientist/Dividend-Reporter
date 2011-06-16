@@ -13,6 +13,7 @@ gem 'cucumber'
 gem 'sass-rails'
 gem 'coffee-script'
 gem 'uglifier'
+gem 'haml'
 
 gem 'jquery-rails'
 
