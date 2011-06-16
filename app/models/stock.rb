@@ -1,3 +1,3 @@
 class Stock < ActiveRecord::Base
-  validates :stock, :presence => true
+  validates :symbol, :presence => true
 end
