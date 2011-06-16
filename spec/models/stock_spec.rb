@@ -16,7 +16,7 @@ describe Stock do
   end
 
   it "should not validates with empty stock symbol" do
-    empty = User.new(@attr.merge(:symbol => ""))
+    empty = Stock.new(@attr.merge(:symbol => ""))
     empty.should_not be_valid
   end
 end
