@@ -24,4 +24,9 @@ describe Stock do
     toolong = Stock.new(@attr.merge(:symbol => "ASDFASDF"))
     toolong.should_not be_valid
   end
+
+  it "should never have ex_date come after pay_date" do
+    ex = Stock.new(@attr.merge(:ex_date => DateTime.now + 21.days))
+    ex.should_not > ex.pay_date
+  end
 end
