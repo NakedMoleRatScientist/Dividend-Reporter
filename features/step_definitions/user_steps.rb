@@ -1,4 +1,7 @@
 Given /^I am logged in as an administrator$/ do
-  User.create!(Factory(:user).merge(:admin => true))
-  login("admin","crazy")
+  Factory(:user, :admin => true)
+  visit login_path
+  fill_in("username", :with => "fooman13")
+  fill_in("password", :with => "foobar")
 end
+ 
