@@ -1,0 +1,12 @@
+<%= form_tag do |f|%>
+  <ul>
+    <div class="field">
+      <li><%= f.label :stocks %><br />
+	<%= f.text_field :stocks %>
+      </li>
+    </div>
+    <div class="action">
+      <%= f.submit "submit" %>
+    </div>
+  </ul>
+<% end %>  
