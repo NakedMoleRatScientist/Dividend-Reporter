@@ -7,4 +7,8 @@ class StocksController < ApplicationController
   def new 
     
   end
+
+  def stock 
+    
+  end
 end
