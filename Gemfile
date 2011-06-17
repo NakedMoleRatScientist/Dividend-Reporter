@@ -6,7 +6,6 @@ gem 'sqlite3'
 gem 'nas-yahoo_stock'
 gem 'sorcery'
 gem 'rspec'
-gem 'rspec-rails', '~>2.6.1'
 gem 'webrat'
 gem 'cucumber'
 # Asset template engines
@@ -27,4 +26,6 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
   gem 'factory_girl_rails'
+  gem 'rspec-rails', '~>2.6.1'
+  gem 'cucumber-rails'
 end
