@@ -19,5 +19,15 @@ describe UsersController do
     end
   end
 
+  describe "GET 'index'" do
+    before(:each) do
+      it "should be successful" do
+        get 'index'
+        response.should be_success
+      end
+    end
+  end
+
+
 
 end
