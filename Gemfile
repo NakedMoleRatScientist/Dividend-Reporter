@@ -29,4 +29,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~>2.6.1'
   gem 'cucumber-rails'
+  gem 'database-cleaner'
 end
