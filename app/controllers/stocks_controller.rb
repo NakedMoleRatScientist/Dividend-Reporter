@@ -1,5 +1,5 @@
 class StocksController < ApplicationController
-  before_filter :require_login, :only => [:new]
+  before_filter :require_login, :except => [:index]
   def index 
     
   end
@@ -9,6 +9,6 @@ class StocksController < ApplicationController
   end
 
   def show 
-   @stock = Stock.find(params[:id])    
+   @stock = Stock.find(params[:id])
   end
 end
