@@ -24,6 +24,9 @@ describe StocksController do
     end
 
     describe "for logged in user" do
+      before(:each) do
+        test_sign_in(Factory(:user))
+      end
       it "should show stocks" do
         get 'show', :id => @stock
         response.should be_success
