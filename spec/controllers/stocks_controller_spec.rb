@@ -17,7 +17,7 @@ describe StocksController do
 
     describe "for non-logged in user" do
       it "should not show stocks" do
-        get 'show'
+        get 'show', :id => @stock
         response.should_not be_success
       end
        
@@ -25,7 +25,7 @@ describe StocksController do
 
     describe "for logged in user" do
       it "should show stocks" do
-        get 'show'
+        get 'show', :id => @stock
         response.should be_success
       end
     end
