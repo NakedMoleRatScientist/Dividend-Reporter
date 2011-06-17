@@ -1,5 +1,5 @@
 class StocksController < ApplicationController
-  before_filter :require_login :only => [:ndew]
+  before_filter :require_login, :only => [:ndew]
   def index 
     
   end
