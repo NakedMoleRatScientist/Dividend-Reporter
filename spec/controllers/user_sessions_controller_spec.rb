@@ -17,9 +17,12 @@ describe UserSessionsController do
   end
 
   describe "GET 'destroy'" do
+    before(:each) do
+      @user = Factory(:user)
+    end
     it "should be successful" do
-      get 'destroy'
-      response.should be_success
+      get 'destroy', :id => @user
+      response.should redirect_to(root_path)
     end
   end
 
