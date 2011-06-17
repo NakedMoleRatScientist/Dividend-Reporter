@@ -6,9 +6,9 @@ Factory.define :user do |u|
 end
 
 Factory.define :admin do |a|
-  u.username "admin"
-  u.email "admin@example.com"
-  u.password "foobar"
-  u.password_confirmation("foobar")
-  u.admin true
+  a.username "admin"
+  a.email "admin@example.com"
+  a.password "foobar"
+  a.password_confirmation("foobar")
+  a.admin true
 end
