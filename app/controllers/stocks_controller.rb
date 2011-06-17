@@ -8,7 +8,7 @@ class StocksController < ApplicationController
     
   end
 
-  def stock 
+  def show 
     
   end
 end
