@@ -6,7 +6,8 @@ describe User do
       :username => "blah",
       :email => "blah@blah.com",
       :password => "foobar",
-      :password_confirmation => "foobar"
+      :password_confirmation => "foobar",
+      :admin => false
     }
   end
   it "should create a user with valid attributes" do
