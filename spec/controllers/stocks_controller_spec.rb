@@ -20,9 +20,11 @@ describe StocksController do
         before(:each) do
           test_sign_in(Factory(:user))
         end
+
         it "should deny entry to the new page for those that are not adminstrator" do
           get 'new'
           response.should redirect_to(root_url)
+          flash[:notice].should =~ /no admin access/
         end
       end
 
