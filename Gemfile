@@ -24,6 +24,7 @@ end
 
 group :test do
   # Pretty printed test output
+  gem 'ruby-debug'
   gem 'turn', :require => false
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~>2.6.1'
