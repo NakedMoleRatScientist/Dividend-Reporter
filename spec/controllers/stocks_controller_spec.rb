@@ -11,6 +11,10 @@ describe StocksController do
 
   describe "GET 'show'" do
 
+    before(:each) do
+      @stock = Factory(:stock)
+    end
+
     describe "for non-logged in user" do
       it "should not show stocks" do
         get 'show'
