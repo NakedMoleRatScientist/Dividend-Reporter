@@ -48,12 +48,16 @@ describe StocksController do
         login_user(Factory(:user))
       end
 
-       
-      it "should deny entry to the new page for those that are not adminstrator" do
-        get 'new'
-        response.should redirect_to(root_url)
-        flash[:notice].should == "You do not have admin access."
+      describe "for non-admin" do
+        it "should deny entry to the new page for those that are not adminstrator" do
+          get 'new'
+          response.should redirect_to(root_url)
+          flash[:notice].should == "You do not have admin access."
+        end  
       end
+ 
+      
+
 
       describe "creating stocks" do
         describe "with three valid stocks" do
@@ -62,6 +66,7 @@ describe StocksController do
           end
 
           it "should create three stocks" do
+            breakpoint
             lambda do
               post :create, :stock => @attr
             end.should change(Stock, :count).by(3)
