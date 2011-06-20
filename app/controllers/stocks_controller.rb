@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
   before_filter :require_login, :except => [:index]
-  before_filter :admin_user
+  before_filter :admin_user, :except => [:show,:index]
   def index 
     
   end
