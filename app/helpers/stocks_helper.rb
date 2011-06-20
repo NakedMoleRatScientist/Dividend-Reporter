@@ -9,7 +9,6 @@ module StocksHelper
     stocks = []
     quotes.each do |q|
       stocks << { :company_name => q[:name], :symbol => q[:symbol] }
-      puts(stocks[-1])
     end
     stocks
   end
