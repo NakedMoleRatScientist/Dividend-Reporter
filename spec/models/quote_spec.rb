@@ -14,7 +14,7 @@ describe Quote do
   end
 
   it "should never have ex_date come after pay_date" do
-    ex = Stock.new(@attr.merge(:ex_date => DateTime.now + 21.days))
+    ex = Quote.new(@attr.merge(:ex_date => DateTime.now + 21.days))
     ex.should_not be_valid
   end
 
