@@ -5,8 +5,7 @@ module StocksHelper
     quotes.standard
     quotes = quotes.result(:to_hash).output
   end
-  def become_stocks symbols
-    quotes = convert_to_quotes(symbol)
+  def become_stocks quotes
     stocks = {}
     quotes.each do |q|
       stocks << { :company_name => q[:name], :symbol => q[:symbol] }
