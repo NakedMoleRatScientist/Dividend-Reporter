@@ -56,7 +56,17 @@ describe StocksController do
         end  
       end
  
-      
+      describe "for admin" do
+        before(:each) do
+          current_user.toggle!(:admin)
+        end
+
+        it "should not deny entry to the new page for those that are adminstrator" do
+          get 'new'
+          response.should be_success
+        end
+      end
+
 
 
       describe "creating stocks" do
