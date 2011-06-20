@@ -5,11 +5,6 @@ describe Stock do
     @attr = {
       :symbol => "KR",
       :company_name => "Kroger Company"
-      :price => BigDecimal.new('24.00'),
-      :dividend_share => BigDecimal.new('0.46'),
-      :yield => BigDecimal.new("1.75"),
-      :ex_date => DateTime.now,
-      :pay_date => DateTime.now + 20.days
     }
   end
   it "should validates with proper values" do
