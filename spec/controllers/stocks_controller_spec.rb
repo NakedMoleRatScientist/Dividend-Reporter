@@ -54,6 +54,17 @@ describe StocksController do
         response.should redirect_to(root_url)
         flash[:notice].should == "You do not have admin access."
       end
+
+      describe "creating stocks" do
+        describe "with three valid stocks" do
+          before(:each) do
+            @attr = {:stocks => "GOOG, KR, YAHOO"}  
+          end
+          
+        end
+
+      end
+
     end
   end
 
