@@ -63,7 +63,7 @@ describe StocksController do
 
           it "should create three stocks" do
             lambda do
-              post :create, :stocks => @attr
+              post :create, :stock => @attr
             end.should change(Stock, :count).by(3)
           end
           
