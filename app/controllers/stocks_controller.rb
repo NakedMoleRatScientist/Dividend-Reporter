@@ -10,7 +10,17 @@ class StocksController < ApplicationController
   end
 
   def create 
-    
+    stocks = params[:stocks]
+    stocks = stocks.spilit(", ")
+    @success = []
+    @fail = []
+    stocks.each do |s|
+      if s.save
+        @success < s
+      else
+        @fail < s
+      end
+    end 
   end
   def show 
    @stock = Stock.find(params[:id])
