@@ -7,6 +7,7 @@ end
 
 Factory.define :stock do |s|
   s.symbol "KR"
+  s.company_name "Kroger Company"
   s.price BigDecimal.new('24.00')
   s.dividend_share BigDecimal.new('0.46')
   s.yield BigDecimal("1.75")
