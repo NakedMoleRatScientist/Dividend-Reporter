@@ -36,7 +36,8 @@ class StocksController < ApplicationController
       else
         @fail << s[:symbol]
       end
-    end 
+    end
+    redirect_to(stocks_path)
   end
   def show 
    @stock = Stock.find(params[:id])
