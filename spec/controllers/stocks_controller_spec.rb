@@ -25,7 +25,7 @@ describe StocksController do
 
     describe "for logged in user" do
       before(:each) do
-        test_sign_in(Factory(:user))
+        login_user(Factory(:user))
       end
       it "should show stocks" do
         get 'show', :id => @stock
@@ -45,14 +45,14 @@ describe StocksController do
 
     describe "for logged in user" do
       before(:each) do
-        test_sign_in(Factory(:user))
+        login_user(Factory(:user))
       end
 
        
       it "should deny entry to the new page for those that are not adminstrator" do
         get 'new'
         response.should redirect_to(root_url)
-        flash[:notice].should =~ /no admin access/
+        flash[:notice].should == "You do not have admin access."
       end
     end
   end
