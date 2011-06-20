@@ -11,7 +11,7 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
     when /the admin panel page/i
-      admin_user_path
+      admin_user_path(1)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
