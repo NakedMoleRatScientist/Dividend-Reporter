@@ -1,11 +1,9 @@
 module StocksHelper
   def convert_to_quotes symbols
-    stocks = stocks.split(", ")
-    stocks.each do |s|
-      quotes = YahooStock::Quote.new(:stock_symbols => s)
-    end
+    symbols = symbols.split(", ")
+    quotes = YahooStock::Quote.new(:stock_symbols => symbols)
     quotes.standard
-    quotes = quotes.result(:to_hash).output
+    quotes = quotes.results(:to_hash).output
   end
   def become_stocks quotes
     stocks = []
