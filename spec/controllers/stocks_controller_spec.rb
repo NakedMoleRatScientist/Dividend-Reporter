@@ -45,7 +45,8 @@ describe StocksController do
 
     describe "for logged in user" do
       before(:each) do
-        login_user(Factory(:user))
+        @user = Factory(:user)
+        login_user(@user)
       end
 
       describe "for non-admin" do
@@ -58,33 +59,32 @@ describe StocksController do
  
       describe "for admin" do
         before(:each) do
-          current_user.toggle!(:admin)
+          @user.toggle!(:admin)
         end
 
         it "should not deny entry to the new page for those that are adminstrator" do
           get 'new'
           response.should be_success
         end
-      end
 
+        describe "creating stocks" do
+          describe "with three valid stocks" do
+            before(:each) do
+              @attr = "GOOG, KR, YAHOO"  
+            end
 
-
-      describe "creating stocks" do
-        describe "with three valid stocks" do
-          before(:each) do
-            @attr = {:stocks => "GOOG, KR, YAHOO"}  
+            it "should create three stocks" do
+              lambda do
+                post :create, :stocks => @attr
+              end.should change(Stock, :count).by(3)
+            end
           end
-
-          it "should create three stocks" do
-            breakpoint
-            lambda do
-              post :create, :stock => @attr
-            end.should change(Stock, :count).by(3)
-          end
-          
         end
-
       end
+
+
+
+      
 
     end
   end
