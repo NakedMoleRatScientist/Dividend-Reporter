@@ -60,6 +60,12 @@ describe StocksController do
           before(:each) do
             @attr = {:stocks => "GOOG, KR, YAHOO"}  
           end
+
+          it "should create three stocks" do
+            lambda do
+              post :create, :stocks => @attr
+            end.should change(Stock, :count).by(3)
+          end
           
         end
 
