@@ -21,4 +21,9 @@ describe Stock do
     toolong.should_not be_valid
   end
 
+  it "should not validates with empty stock company name" do
+    empty = Stock.new(@attr.merge(:company_name => ""))
+    empty.should_not be_valid
+  end
+
 end
