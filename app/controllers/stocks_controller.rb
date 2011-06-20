@@ -1,6 +1,22 @@
 class StocksController < ApplicationController
   before_filter :require_login, :except => [:index]
   before_filter :admin_user, :except => [:show,:index]
+
+  def convert_to_quotes symbols
+    symbols = symbols.split(", ")
+    quotes = YahooStock::Quote.new(:stock_symbols => symbols)
+    quotes.standard
+    quotes = quotes.results(:to_hash).output
+  end
+
+  def become_stocks quotes
+    stocks = []
+    quotes.each do |q|
+      stocks << { :company_name => q[:name], :symbol => q[:symbol] }
+    end
+    stocks
+  end
+
   def index 
     
   end
@@ -9,16 +25,16 @@ class StocksController < ApplicationController
     
   end
 
-  def create 
-    stocks = params[:stocks]
-    stocks = stocks.spilit(", ")
+  def create
+    stocks = become_stocks(convert_to_quotes(params[:stocks]))
     @success = []
     @fail = []
     stocks.each do |s|
-      if s.save
-        @success < s
+      stock = Stock.new(s)
+      if stock.save
+        @success << s[:symbol]
       else
-        @fail < s
+        @fail << s[:symbol]
       end
     end 
   end
