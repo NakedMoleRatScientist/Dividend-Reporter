@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110617152505) do
+ActiveRecord::Schema.define(:version => 20110620151858) do
+
+  create_table "quotes", :force => true do |t|
+    t.integer  "stock_id"
+    t.decimal  "dividend_share"
+    t.decimal  "price"
+    t.date     "ex_date"
+    t.date     "pay_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stocks", :force => true do |t|
     t.string   "symbol"
