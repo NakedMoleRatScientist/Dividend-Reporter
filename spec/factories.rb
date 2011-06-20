@@ -8,8 +8,6 @@ end
 Factory.define :stock do |s|
   s.symbol "KR"
   s.company_name "Kroger Company"
-  s.price BigDecimal.new('24.00')
-  
 end
 
 Factory.define :quote do |q|
