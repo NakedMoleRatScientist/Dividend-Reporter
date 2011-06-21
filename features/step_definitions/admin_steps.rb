@@ -5,7 +5,7 @@ Given /^I am logged in as an administrator$/ do
   fill_in("password", :with => "foobar")
   click_button("Login")
 end
- 
-Given /^there is a stock with company_name: "Google Inc."$/ do |arg1|
-  Factory(:stock)
+
+Given /^there is a stock with company_name: "([^"]*)"$/ do |arg1|
+  Factory(:stock).company_name = arg1
 end
