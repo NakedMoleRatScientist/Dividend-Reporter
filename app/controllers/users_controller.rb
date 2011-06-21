@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     @user = User.new()
   end
 
-  def admin 
+  def admin
+    @stocks = Stock.all
   end
 
   def create 
