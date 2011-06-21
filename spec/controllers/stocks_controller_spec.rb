@@ -111,6 +111,10 @@ describe StocksController do
     end
 
     describe "for logged-in user" do
+      before(:each) do
+        @user = Factory(:user)
+        login_user(@user)
+      end
       describe "for non-admin" do
         it "should deny entry to the new page for those that are not adminstrator" do
           delete :destroy, :id => @stock
