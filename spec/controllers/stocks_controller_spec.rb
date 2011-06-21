@@ -95,12 +95,11 @@ describe StocksController do
           end
         end
       end
-
-
-
-      
-
     end
+  end
+
+  describe "DELETE 'destroy'" do
+    
   end
 
 end
