@@ -6,7 +6,6 @@ Feature: Admin removes a stock
   Scenario: Admin removes a stock from the masterlist
     Given there is a stock with company_name: "Google, Inc."
     Given I am logged in as an administrator
-    Given I am on the stocks page
-    Then I should see "Google Inc."
+    Given I am on the admin panel page
     When I follow "remove"
     Then I should see "Stock successfully removed"
