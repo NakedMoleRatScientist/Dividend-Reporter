@@ -6,8 +6,8 @@ Factory.define :user do |u|
 end
 
 Factory.define :stock do |s|
-  s.symbol "KR"
-  s.company_name "Kroger Company"
+  s.symbol "GOOG"
+  s.company_name "Google Inc."
 end
 
 Factory.define :quote do |q|
