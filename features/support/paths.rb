@@ -12,6 +12,9 @@ module NavigationHelpers
       '/'
     when /the admin panel page/i
       admin_user_path(1)
+
+    when /the stocks index page/i
+      stocks_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
