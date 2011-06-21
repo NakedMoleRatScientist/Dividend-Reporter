@@ -129,8 +129,9 @@ describe StocksController do
           @user.toggle!(:admin)
         end
 
-        it "should not deny entry to destroy for those that are adminstrator" do
-          
+        it "should redirect to root path" do
+          delete :destroy, :id => @stock
+          response.should redirect_to(stocks_url)
         end
         it "should have a successful change in stock count by -1" do
           lambda do
