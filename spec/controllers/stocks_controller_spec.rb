@@ -124,9 +124,15 @@ describe StocksController do
       end
 
       describe "for admin" do
+
+        before(:each)do
+          @user.toggle!(:admin)
+        end
+        
         it "should not deny entry to destroy for those that are adminstrator" do
-          delete :destroy, :id => @stock
-          response.should be_success
+          lambda do
+            delete :destroy, :id => @stock
+          end.should change(Stock, :count).by(-1)
         end
       end
 
