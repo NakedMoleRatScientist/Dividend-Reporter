@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def admin 
-    @stock = Stock.new()
   end
 
   def create 
