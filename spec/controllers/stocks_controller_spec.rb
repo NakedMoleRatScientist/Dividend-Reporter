@@ -125,7 +125,7 @@ describe StocksController do
 
       describe "for admin" do
         it "should not deny entry to destroy for those that are adminstrator" do
-          delete, :destroy, :id => @stock
+          delete :destroy, :id => @stock
           response.should be_success
         end
       end
