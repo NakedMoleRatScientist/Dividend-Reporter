@@ -128,8 +128,11 @@ describe StocksController do
         before(:each)do
           @user.toggle!(:admin)
         end
-        
+
         it "should not deny entry to destroy for those that are adminstrator" do
+          
+        end
+        it "should have a successful change in stock count by -1" do
           lambda do
             delete :destroy, :id => @stock
           end.should change(Stock, :count).by(-1)
