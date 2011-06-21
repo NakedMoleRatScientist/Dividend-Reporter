@@ -8,6 +8,7 @@ gem 'sorcery'
 gem 'rspec'
 gem 'webrat'
 gem 'cucumber'
+gem 'faker'
 # Asset template engines
 gem 'sass-rails'
 gem 'coffee-script'
