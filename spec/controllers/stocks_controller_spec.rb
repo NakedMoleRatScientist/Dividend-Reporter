@@ -99,7 +99,9 @@ describe StocksController do
   end
 
   describe "DELETE 'destroy'" do
-    
+    before(:each) do
+      @stock = Factory(:stock)
+    end
   end
 
 end
