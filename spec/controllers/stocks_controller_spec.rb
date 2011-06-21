@@ -10,10 +10,15 @@ describe StocksController do
       response.should be_success
     end
 
-    describe "when it have stocks" do
+    describe "with a sample populated stock index" do
       before(:each) do
         @stock = Factory(:stock)
-      end  
+      end
+
+      it "should have a company name link" do
+        get 'index'
+        response.should have_selector(a, :content => "Google Inc.") 
+      end
     end
 
   end
