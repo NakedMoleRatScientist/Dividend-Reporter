@@ -17,8 +17,8 @@ class StocksController < ApplicationController
     stocks
   end
 
-  def index 
-    
+  def index
+    @stocks = Stock.all
   end
 
   def new 
