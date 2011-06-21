@@ -110,6 +110,18 @@ describe StocksController do
       end
     end
 
+    describe "for logged-in user" do
+      describe "for non-admin" do
+        it "should deny entry to the new page for those that are not adminstrator" do
+          delete :destroy, :id => @stock
+          response.should redirect_to(root_url)
+          flash[:notice].should == "You do not have admin access."
+        end
+      end
+
+    end
+
+
   end
 
 end
