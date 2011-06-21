@@ -3,6 +3,10 @@ require 'spec_helper'
 describe StocksController do
   render_views
   describe "GET 'index'" do
+    before(:each) do
+      @stock = Factory(:stock)
+    end
+    
     it "should be successful" do
       get 'index'
       response.should be_success
