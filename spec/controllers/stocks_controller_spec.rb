@@ -102,6 +102,14 @@ describe StocksController do
     before(:each) do
       @stock = Factory(:stock)
     end
+
+    describe "for non-logged-in user" do
+      it "should deny access" do
+        delete :destroy, :id => @stock
+        response.should redirect_to(root_path)
+      end
+    end
+
   end
 
 end
