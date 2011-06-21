@@ -7,6 +7,6 @@ Feature: Admin removes a stock
     Given there is a stock with company_name: "Google, Inc."
     Given I am logged in as an administrator
     Given I am on the stocks page
-    Then I should see "Google, Inc"
+    Then I should see "Google Inc."
     When I follow "remove"
     Then I should see "Stock successfully removed"
