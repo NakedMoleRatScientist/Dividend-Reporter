@@ -17,7 +17,7 @@ describe StocksController do
 
       it "should have a company name link" do
         get 'index'
-        response.should have_selector(a, :content => "Google Inc.") 
+        response.should have_selector(:a, :content => "Google Inc.") 
       end
     end
 
