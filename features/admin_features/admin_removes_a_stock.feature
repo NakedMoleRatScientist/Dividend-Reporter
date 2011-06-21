@@ -7,5 +7,7 @@ Feature: Admin removes a stock
     Given there is a stock with company_name: "Google, Inc."
     Given I am logged in as an administrator
     Given I am on the admin panel page
+    When I follow "Destroy Stocks"
+    Then I should see "Google, Inc"
     When I follow "remove"
     Then I should see "Stock successfully removed"
