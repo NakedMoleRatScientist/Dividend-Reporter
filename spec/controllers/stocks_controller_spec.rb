@@ -3,14 +3,19 @@ require 'spec_helper'
 describe StocksController do
   render_views
   describe "GET 'index'" do
-    before(:each) do
-      @stock = Factory(:stock)
-    end
+    
     
     it "should be successful" do
       get 'index'
       response.should be_success
     end
+
+    describe "when it have stocks" do
+      before(:each) do
+        @stock = Factory(:stock)
+      end  
+    end
+
   end
 
   describe "GET 'show'" do
