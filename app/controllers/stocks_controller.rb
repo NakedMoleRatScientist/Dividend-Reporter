@@ -7,10 +7,6 @@ class StocksController < ApplicationController
     @stocks = Stock.all
   end
 
-  def new 
-    
-  end
-
   def create
     stocks = become_stocks(convert_to_quotes(params[:stocks]))
     @success = []
