@@ -27,6 +27,7 @@ describe QuotesController do
       describe "for admin" do
         before(:each) do
           @user.toggle!(:admin)
+          Factory(:stock)
         end
 
         it "should not deny ability to create for those that are adminstrator" do
