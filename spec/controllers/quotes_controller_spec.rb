@@ -20,7 +20,7 @@ describe QuotesController do
         it "should deny ability to create for those that are not adminstrator" do
           post :create, :quote => @attr
           response.should redirect_to(root_url)
-          flash[:notice].should == "You do not have admin access"
+          flash[:notice].should == "You do not have admin access."
         end
       end
 
