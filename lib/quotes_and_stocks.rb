@@ -1,8 +1,12 @@
 module QuotesAndStocks
-  def convert_to_quotes symbols
+  def convert_to_quotes symbols, option = 0
     symbols = symbols.split(", ")
     quotes = YahooStock::Quote.new(:stock_symbols => symbols)
-    quotes.standard
+    if option == 0
+      quotes.standard
+    else
+      quotes.extended
+    end
     quotes = quotes.results(:to_hash).output
   end
 
