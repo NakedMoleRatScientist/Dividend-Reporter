@@ -6,6 +6,10 @@ module QuotesAndStocks
     quotes = quotes.results(:to_hash).output
   end
 
+  def standard_quote symbol
+    convert_to_quotes(symbol)[0]
+  end
+
   def become_stocks quotes
     stocks = []
     quotes.each do |q|
