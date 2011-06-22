@@ -77,6 +77,10 @@ describe Quote do
     before(:each) do
       @quote = @stock.quotes.create(@attr)
     end
+
+    it "should have a stock attribute" do
+      @quote.should respond_to(:stock)
+    end
   end
 
 
