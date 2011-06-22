@@ -1,3 +1,4 @@
 <h2>Add Stock</h2>
 <%= render "stocks/stock_form" %>
 <h2>Remove Stock</h2>
+<%= render :partial => "stocks/stock_destroy", :collection => @stocks, :as => :stock %>
