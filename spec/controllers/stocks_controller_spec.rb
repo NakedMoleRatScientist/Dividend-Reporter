@@ -49,10 +49,10 @@ describe StocksController do
 
 
   end      
-  describe "GET 'new'" do
+  describe "POST 'create'" do
     describe "for non-logged in user" do
-      it "should deny entry to the new page" do
-        get 'new'
+      it "should deny ability to create" do
+        post :create, :stocks => @attr
         response.should redirect_to(root_url)
       end
     end
@@ -65,7 +65,7 @@ describe StocksController do
 
       describe "for non-admin" do
         it "should deny entry to the new page for those that are not adminstrator" do
-          get 'new'
+          post :create, :stocks => @attr
           response.should redirect_to(root_url)
           flash[:notice].should == "You do not have admin access."
         end  
@@ -77,7 +77,7 @@ describe StocksController do
         end
 
         it "should not deny entry to the new page for those that are adminstrator" do
-          get 'new'
+          post :create, :stocks => @attr
           response.should be_success
         end
 
