@@ -5,7 +5,7 @@ describe QuotesController do
   describe "POST 'create'" do
     describe "for non-logged in user" do
       it "should ability to create" do
-        post :create, :quote => @attr
+        post :create
         response.should redirect_to(root_url)
       end
     end
@@ -18,7 +18,7 @@ describe QuotesController do
 
       describe "for non-admin" do
         it "should deny ability to create for those that are not adminstrator" do
-          post :create, :quote => @attr
+          post :create
           response.should redirect_to(root_url)
           flash[:notice].should == "You do not have admin access."
         end
