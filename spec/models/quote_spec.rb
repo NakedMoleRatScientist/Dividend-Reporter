@@ -47,4 +47,9 @@ describe Quote do
     noyield = Quote.new(@attr.merge(:yield => ""))
     noyield.should_not be_valid
   end
+
+  it "should not have characters in yield" do
+    nostring = Quote.new(@attr.merge(:yield => "kiro"))
+    nostring.should_not be_valid
+  end
 end
