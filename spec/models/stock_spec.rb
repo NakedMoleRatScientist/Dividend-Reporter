@@ -26,4 +26,13 @@ describe Stock do
     empty.should_not be_valid
   end
 
+  describe "quote associations" do
+    before(:each) do
+      @stock = Factory(:stock)
+      @q1 = Factory(:quote, :symbol => "APPL", :company_name => "Apple")
+      @q2 = Factory(:quote)
+    end
+  end
+
+
 end
