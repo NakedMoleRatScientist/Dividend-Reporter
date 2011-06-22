@@ -42,4 +42,9 @@ describe Quote do
     nostring = Quote.new(@attr.merge(:dividend_share => "adffw"))
     nostring.should_not be_valid
   end
+
+  it "should never have an empty yield" do
+    noyield = Quote.new(@attr.merge(:yield => ""))
+    noyield.should_not be_valid
+  end
 end
