@@ -1,4 +1,4 @@
-modules QuotesAndStocks
+module QuotesAndStocks
   def convert_to_quotes symbols
     symbols = symbols.split(", ")
     quotes = YahooStock::Quote.new(:stock_symbols => symbols)
