@@ -3,8 +3,6 @@ class Quote < ActiveRecord::Base
   validates :price, :presence => true, :numericality => true
   validates :dividend_share, :presence => true, :numericality => true
   validates :yield, :presence => true, :numericality => true
-  validates :ex_date, :presence => true
-  validates :pay_date, :presence => true
   default_scope :order => "quotes.created_at DESC"
 
   belongs_to :stock
