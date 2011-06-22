@@ -17,7 +17,7 @@ class QuotesController < ApplicationController
         attr.merge!({:ex_date => DateTime.parse(extend[:ex_dividend_date]),
                       :pay_date => DateTime.parse(extend[:dividend_pay_date])})
       end
-     stock = Quote.create(attr)
+      quote = Quote.create(attr)
     end  
     redirect_to stocks_path
   end
