@@ -45,7 +45,7 @@ class StocksController < ApplicationController
 
   def destroy 
     @stock = Stock.find(params[:id]).destroy
-    flash[:succes] = "Stock is destroyed"
+    flash[:success] = "Stock successfully removed"
     redirect_to stocks_path
   end
 end
