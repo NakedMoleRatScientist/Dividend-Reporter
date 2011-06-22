@@ -10,6 +10,14 @@ describe QuotesController do
       end
     end
 
+    describe "for logged-in user" do
+      before(:each) do
+        @user = Factory(:user)
+        login_user(@user)
+      end
+    end
+
+
   end
 
 end
