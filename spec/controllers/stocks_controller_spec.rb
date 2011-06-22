@@ -50,6 +50,9 @@ describe StocksController do
 
   end      
   describe "POST 'create'" do
+    before(:each) do
+      @attr = "GOOG"
+    end
     describe "for non-logged in user" do
       it "should deny ability to create" do
         post :create, :stocks => @attr
@@ -64,7 +67,7 @@ describe StocksController do
       end
 
       describe "for non-admin" do
-        it "should deny entry to the new page for those that are not adminstrator" do
+        it "should deny ability to create for those that are not adminstrator" do
           post :create, :stocks => @attr
           response.should redirect_to(root_url)
           flash[:notice].should == "You do not have admin access."
@@ -76,9 +79,9 @@ describe StocksController do
           @user.toggle!(:admin)
         end
 
-        it "should not deny entry to the new page for those that are adminstrator" do
+        it "should not deny ability to create for those that are adminstrator" do
           post :create, :stocks => @attr
-          response.should be_success
+          response.should redirect_to(stocks_url)
         end
 
         describe "creating stocks" do
