@@ -57,4 +57,9 @@ describe Quote do
     nodate = Quote.new(@attr.merge(:ex_date => ""))
     nodate.should_not be_valid
   end
+
+  it "should fail when ex_date is not a date" do
+    notdate = Quote.new(@attr.merge(:ex_date => "adsf"))
+    notdate.should_not be_valid
+  end
 end
