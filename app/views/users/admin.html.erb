@@ -2,3 +2,5 @@
 <%= render "stocks/stock_form" %>
 <h2>Remove Stock</h2>
 <%= render :partial => "stocks/stock_destroy", :collection => @stocks, :as => :stock %>
+<h2>Update quotes</h2>
+<%= link_to "Update all quotes", quote, :method => :post %>
