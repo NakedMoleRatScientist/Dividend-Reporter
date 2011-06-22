@@ -13,6 +13,11 @@ describe Quote do
     }
   end
 
+  it "should validates with proper values" do
+    quote = Quote.create(@attr)
+    quote.should be_valid
+  end
+
   it "should never have ex_date come after pay_date" do
     ex = Quote.new(@attr.merge(:ex_date => DateTime.now + 21.days))
     ex.should_not be_valid
