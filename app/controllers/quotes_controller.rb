@@ -10,7 +10,9 @@ class QuotesController < ApplicationController
         :stock_id => s.id,
         :price => BigDecimal.new("#{stand[:last_trade_prize_only]}"),
         :dividend_share => BigDecimal.new("#{extend[:dividend_per_share]}"),
-        :yield => BigDecimal.new("#{extend[:dividend_yield]}")
+        :yield => BigDecimal.new("#{extend[:dividend_yield]}"),
+        :ex_date => DateParse(extend[:ex_dividend_date]),
+        :pay_date => DateParse(extend[:dividend_pay_date])
       }
     end  
     redirect_to stocks_path
