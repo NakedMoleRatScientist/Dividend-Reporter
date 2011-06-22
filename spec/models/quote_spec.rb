@@ -81,6 +81,11 @@ describe Quote do
     it "should have a stock attribute" do
       @quote.should respond_to(:stock)
     end
+
+    it "should have the right associated stock" do
+      @quote.stock_id.should == @stock.id
+      @quote.stock.should == @stock
+    end
   end
 
 
