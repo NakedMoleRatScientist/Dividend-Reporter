@@ -28,6 +28,11 @@ describe QuotesController do
         before(:each) do
           @user.toggle!(:admin)
         end
+
+        it "should not deny ability to create for those that are adminstrator" do
+          post :create
+          response.should redirect_to(stocks_url)
+        end
       end
 
 
