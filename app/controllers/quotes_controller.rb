@@ -1,6 +1,7 @@
 class QuotesController < ApplicationController
   before_filter :require_login
   before_filter :admin_user
+  include QuotesAndStocks
   def create
     stocks = Stock.all
     stocks.each do |s|
@@ -11,8 +12,8 @@ class QuotesController < ApplicationController
         :price => BigDecimal.new("#{stand[:last_trade_prize_only]}"),
         :dividend_share => BigDecimal.new("#{extend[:dividend_per_share]}"),
         :yield => BigDecimal.new("#{extend[:dividend_yield]}"),
-        :ex_date => DateParse(extend[:ex_dividend_date]),
-        :pay_date => DateParse(extend[:dividend_pay_date])
+        :ex_date => DateTime.parse(extend[:ex_dividend_date]),
+        :pay_date => DateTime.parse(extend[:dividend_pay_date])
       }
       stock = Stock.create(attr)
     end  
