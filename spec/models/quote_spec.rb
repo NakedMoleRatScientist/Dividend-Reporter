@@ -18,4 +18,9 @@ describe Quote do
     ex.should_not be_valid
   end
 
+  it "should never have an empty price" do
+    noprice = Quote.new(@attr.merge(:price => ""))
+    noprice.should_not be_valid
+  end
+
 end
