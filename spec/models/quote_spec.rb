@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Quote do
   before(:each) do
-    stock = Factory(:stock)
+    @stock = Factory(:stock)
     @attr = {
-      :stock_id => stock.id,
+      :stock_id => @stock.id,
       :price => BigDecimal.new('24.00'),
       :dividend_share => BigDecimal.new("0.46"),
       :yield => BigDecimal.new("1.75"),
@@ -72,5 +72,6 @@ describe Quote do
     notpay = Quote.new(@attr.merge(:pay_date => "adsf"))
     notpay.should_not be_valid
   end
+
   
 end
