@@ -1,4 +1,3 @@
-require "lib/quotes_and_stock.rb"
 class StocksController < ApplicationController
   before_filter :require_login, :except => [:index]
   before_filter :admin_user, :except => [:show,:index]
