@@ -28,4 +28,8 @@ describe Quote do
     noprice.should_not be_valid
   end
 
+  it "should not have characters in price" do
+    nostring = Quote.new(@attr.merge(:price => "as32"))
+    nostring.should_not be_valid
+  end
 end
