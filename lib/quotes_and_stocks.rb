@@ -14,6 +14,10 @@ module QuotesAndStocks
     convert_to_quotes(symbol)[0]
   end
 
+  def extended_quote symbol
+    convert_to_quotes(symbol, 1)[0]
+  end
+
   def become_stocks quotes
     stocks = []
     quotes.each do |q|
