@@ -52,4 +52,9 @@ describe Quote do
     nostring = Quote.new(@attr.merge(:yield => "kiro"))
     nostring.should_not be_valid
   end
+
+  it "should not have an empty date" do
+    nodate = Quote.new(@attr.merge(:date => ""))
+    nodate.should_not be_valid
+  end
 end
