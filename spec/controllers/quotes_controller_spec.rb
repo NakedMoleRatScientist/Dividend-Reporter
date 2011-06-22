@@ -15,6 +15,15 @@ describe QuotesController do
         @user = Factory(:user)
         login_user(@user)
       end
+
+      describe "for non-admin" do
+        it "should deny ability to create for those that are not adminstrator" do
+          post :create, :quote => @attr
+          response.should redirect_To(root_url)
+          flash[:notice].should == "You do not have admin access"
+        end
+      end
+
     end
 
 
