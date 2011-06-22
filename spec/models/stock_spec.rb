@@ -36,6 +36,10 @@ describe Stock do
     it "should have a quotes attribute" do
       @stock.should respond_to(:quotes)
     end
+
+    it "should have the right quotes in the proper order" do
+      @stock.quotes.should == [@q2,@q1]
+    end
   end
 
 
