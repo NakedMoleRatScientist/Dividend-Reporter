@@ -67,5 +67,10 @@ describe Quote do
     nopay = Quote.new(@attr.merge(:pay_date => ""))
     nopay.should_not be_valid
   end
+
+  it "should fail when pay_date is not a date" do
+    notpay = Quote.new(@attr.merge(:pay_date => "adsf"))
+    notpay.should_not be_valid
+  end
   
 end
