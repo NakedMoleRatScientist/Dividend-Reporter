@@ -3,7 +3,10 @@ class Quote < ActiveRecord::Base
   validates :price, :presence => true, :numericality => true
   validates :dividend_share, :presence => true, :numericality => true
   validates :yield, :presence => true, :numericality => true
-  def ex_date_cannot_be_more_in_the_future_than_pay_date 
+  def ex_date_cannot_be_more_in_the_future_than_pay_date
+    if self.ex_date == nil || self.pay_date == nil
+      return
+    end
     errors.add(:ex_date, "can't be further into the future than pay_date") if self.ex_date > self.pay_date
   end
 
