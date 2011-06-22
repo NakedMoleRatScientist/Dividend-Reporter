@@ -5,7 +5,6 @@ class QuotesController < ApplicationController
   def create
     stocks = Stock.all
     stocks.each do |s|
-      breakpoint
       stand = standard_quote(s.symbol)
       extend = extended_quote(s.symbol)
       attr = {
