@@ -9,6 +9,7 @@ gem 'rspec'
 gem 'webrat'
 gem 'cucumber'
 gem 'faker'
+gem 'validates_timeliness'
 # Asset template engines
 gem 'sass-rails'
 gem 'coffee-script'
