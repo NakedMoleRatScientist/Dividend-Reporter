@@ -6,6 +6,8 @@ class Quote < ActiveRecord::Base
   validates :ex_date, :presence => true
   validates :pay_date, :presence => true
   default_scope :order => "quotes.created_at DESC"
+
+  belongs_to :stock
   def ex_date_cannot_be_more_in_the_future_than_pay_date
     if self.ex_date == nil || self.pay_date == nil
       return
