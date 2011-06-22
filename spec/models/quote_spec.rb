@@ -54,7 +54,7 @@ describe Quote do
   end
 
   it "should not have an empty date" do
-    nodate = Quote.new(@attr.merge(:date => ""))
+    nodate = Quote.new(@attr.merge(:ex_date => ""))
     nodate.should_not be_valid
   end
 end
