@@ -73,5 +73,12 @@ describe Quote do
     notpay.should_not be_valid
   end
 
+  describe "stock association" do
+    before(:each) do
+      @quote = @stock.quotes.create(@attr)
+    end
+  end
+
+
   
 end
