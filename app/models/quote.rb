@@ -4,6 +4,7 @@ class Quote < ActiveRecord::Base
   validates :dividend_share, :presence => true, :numericality => true
   validates :yield, :presence => true, :numericality => true
   validates :ex_date, :presence => true
+  validates :pay_date, :presence => true
   def ex_date_cannot_be_more_in_the_future_than_pay_date
     if self.ex_date == nil || self.pay_date == nil
       return
