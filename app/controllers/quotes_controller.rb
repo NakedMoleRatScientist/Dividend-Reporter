@@ -13,7 +13,7 @@ class QuotesController < ApplicationController
         :dividend_share => BigDecimal.new("#{extend[:dividend_per_share]}"),
         :yield => BigDecimal.new("#{extend[:dividend_yield]}")
       }
-      unless extend[:dividend_share] == "N/A"
+      unless extend[:dividend_yield] == "N/A"
         attr.merge!({:ex_date => DateTime.parse(extend[:ex_dividend_date]),
                       :pay_date => DateTime.parse(extend[:dividend_pay_date])})
       end
