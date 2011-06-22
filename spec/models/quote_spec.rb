@@ -37,4 +37,9 @@ describe Quote do
     noshare = Quote.new(@attr.merge(:dividend_share => ""))
     noshare.should_not be_valid
   end
+
+  it "should not have characters in dividend_share" do
+    nostring = Quote.new(@attr.merge(:dividend_share => "adffw"))
+    nostring.should_not be_valid
+  end
 end
