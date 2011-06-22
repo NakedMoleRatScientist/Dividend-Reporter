@@ -34,6 +34,12 @@ describe QuotesController do
           post :create
           response.should redirect_to(stocks_url)
         end
+
+        it "should successfully create a quote based on one stock" do
+          lambda do
+            post :create
+          end.should change(Quote, :count).by(1)
+        end
       end
 
 
