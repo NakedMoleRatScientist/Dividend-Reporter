@@ -53,7 +53,7 @@ describe Quote do
     nostring.should_not be_valid
   end
 
-  it "should not have an empty date" do
+  it "should fail when ex_date is not a date" do
     nodate = Quote.new(@attr.merge(:ex_date => ""))
     nodate.should_not be_valid
   end
