@@ -53,26 +53,6 @@ describe Quote do
     nostring.should_not be_valid
   end
 
-  it "should fail when ex_date is empty" do
-    nodate = Quote.new(@attr.merge(:ex_date => ""))
-    nodate.should_not be_valid
-  end
-
-  it "should fail when ex_date is not a date" do
-    notdate = Quote.new(@attr.merge(:ex_date => "adsf"))
-    notdate.should_not be_valid
-  end
-
-  it "should fail when pay_date is empty" do
-    nopay = Quote.new(@attr.merge(:pay_date => ""))
-    nopay.should_not be_valid
-  end
-
-  it "should fail when pay_date is not a date" do
-    notpay = Quote.new(@attr.merge(:pay_date => "adsf"))
-    notpay.should_not be_valid
-  end
-
   describe "stock association" do
     before(:each) do
       @quote = @stock.quotes.create(@attr)
