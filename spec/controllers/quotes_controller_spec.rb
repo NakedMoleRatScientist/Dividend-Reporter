@@ -24,6 +24,13 @@ describe QuotesController do
         end
       end
 
+      describe "for admin" do
+        before(:each) do
+          @user.toggle!(:admin)
+        end
+      end
+
+
     end
 
 
