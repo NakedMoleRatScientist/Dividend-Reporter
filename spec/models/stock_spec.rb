@@ -32,6 +32,10 @@ describe Stock do
       @q1 = Factory(:quote, :symbol => "APPL", :company_name => "Apple")
       @q2 = Factory(:quote)
     end
+
+    it "should have a quotes attribute" do
+      @stock.should respond_to(:quotes)
+    end
   end
 
 
