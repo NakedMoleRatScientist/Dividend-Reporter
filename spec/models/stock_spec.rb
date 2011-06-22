@@ -40,6 +40,13 @@ describe Stock do
     it "should have the right quotes in the proper order" do
       @stock.quotes.should == [@q2,@q1]
     end
+
+    it "should destroy associated quotes" do
+      @stock.destroy
+      [@q2,@q1].each do |q|
+        Quote.find_by_id(q.id).should be_nil
+      end
+    end
   end
 
 
