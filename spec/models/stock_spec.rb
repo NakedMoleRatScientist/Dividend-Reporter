@@ -29,8 +29,8 @@ describe Stock do
   describe "quote associations" do
     before(:each) do
       @stock = Factory(:stock)
-      @q1 = Factory(:quote, :price => 12)
-      @q2 = Factory(:quote, :price => 9)
+      @q1 = Factory(:quote, :stock_id => @stock.id, :price => 12)
+      @q2 = Factory(:quote, :stock_id => @stock.id, :price => 9)
     end
 
     it "should have a quotes attribute" do
