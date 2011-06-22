@@ -14,6 +14,7 @@ class QuotesController < ApplicationController
         :ex_date => DateParse(extend[:ex_dividend_date]),
         :pay_date => DateParse(extend[:dividend_pay_date])
       }
+      stock = Stock.create(attr)
     end  
     redirect_to stocks_path
   end
