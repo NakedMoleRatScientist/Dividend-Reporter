@@ -32,4 +32,9 @@ describe Quote do
     nostring = Quote.new(@attr.merge(:price => "as32"))
     nostring.should_not be_valid
   end
+
+  it "should never have an empty dividend_share" do
+    noshare = Quote.new(@attr.merge(:dividend_share => ""))
+    noshare.should_not be_valid
+  end
 end
