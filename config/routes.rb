@@ -5,6 +5,7 @@ DividendReporter::Application.routes.draw do
       get :admin
     end
   end
+  resources :quotes
   resources :user_sessions
   match 'login' =>  "user_sessions#new", :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
