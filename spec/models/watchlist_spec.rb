@@ -5,7 +5,7 @@ describe Watchlist do
     @watching = Factory(:user)
     @watched = Factory(:stock)
 
-    @watchlist = @watching.watchlist.build(:stock_id => @watched.id)
+    @watchlist = @watching.watchlists.build(:stock_id => @watched.id)
   end
 
   it "should create a new instance given valid attributes" do
