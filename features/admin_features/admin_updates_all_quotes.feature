@@ -7,5 +7,5 @@ Feature: Admin updates all quotes
     Given there is a stock with company_name: "Google Inc."
     Given I am logged in as an administrator
     Given I am on the admin panel page
-    When I follow "Update all quotes"
+    When I press "Update all quotes"
     Then I should see "All quotes successfully updated"
