@@ -19,6 +19,6 @@ class QuotesController < ApplicationController
       end
       quote = Quote.create(attr)
     end  
-    redirect_to stocks_path
+    redirect_to stocks_path, :notice => "All quotes successfully updated"
   end
 end
