@@ -7,4 +7,9 @@ describe Watchlist do
 
     @watchlist = @watching.watchlist.build(:stock_id => @watched.id)
   end
+
+  it "should create a new instance given valid attributes" do
+    watch = @watchlist.save
+    watch.should be_valid
+  end
 end
