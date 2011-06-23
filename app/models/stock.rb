@@ -9,4 +9,8 @@ class Stock < ActiveRecord::Base
     symbol.upcase!
   end
 
+  def watched? 
+    
+  end
+
 end
