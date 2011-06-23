@@ -49,5 +49,17 @@ describe Stock do
     end
   end
 
+  describe "user associations" do
+    before(:each) do
+      @user = Factory(:user)
+      @stock = @user.stocks.create(@attr)
+    end
+
+    it "should have a users attribute" do
+      @stock.should respond_to(:users)
+    end
+  end
+
+
 
 end
