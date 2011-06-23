@@ -24,15 +24,19 @@ describe Watchlist do
     it "should have the right watched" do
       @watchlist.watched.should == @watched
     end
+
+    it "should have the right watching" do
+      @watchlist.watching.should == @watching
+    end
   end
 
   describe "validations" do
-    it "should require a stock_id" do
+    it "should require a watched_id" do
       @watchlist.watched_id = nil
       @watchlist.should_not be_valid
     end
 
-    it "should require a user_id" do
+    it "should require a watching_id" do
       @watchlist.watching_id = nil
       @watchlist.should_not be_valid
     end
