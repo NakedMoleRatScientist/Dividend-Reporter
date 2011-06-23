@@ -31,6 +31,11 @@ describe User do
     it "should have a watch! method" do
       @user.should respond_to(:watch!)
     end
+
+    it "should watch a stock" do
+      @user.watch!(@stock)
+      @user.should be_watching(@watched)
+    end
   end
 
 end
