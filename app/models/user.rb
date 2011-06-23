@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def watching? watched 
     watchlists.find_by_watched_id(watched)
   end
+
+  def unwatch! watched 
+    watchlists.find_by_watched_id(watched).destroy
+  end
 end
