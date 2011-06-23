@@ -2,7 +2,7 @@
   <% if current_user %>
     <%= current_user.email %>
     <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-    <%= link_to "Logout", :logout %>
+    <%= link_to "logout", :logout %>
   <% else %>
     <%= link_to "Register", new_user_path %>
     <%= link_to "Login", :login %>
