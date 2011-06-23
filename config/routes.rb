@@ -1,4 +1,6 @@
 DividendReporter::Application.routes.draw do
+  get "pages/help"
+
   resources :stocks
   resources :users do
     member do
