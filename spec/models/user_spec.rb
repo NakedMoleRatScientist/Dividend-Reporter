@@ -27,6 +27,10 @@ describe User do
     it "should have a watching method" do
       @user.should respond_to(:watching)
     end
+
+    it "should have a watch! method" do
+      @user.should respond_to(:watch!)
+    end
   end
 
 end
