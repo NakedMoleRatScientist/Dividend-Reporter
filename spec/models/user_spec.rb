@@ -21,7 +21,7 @@ describe User do
     end
 
     it "should have a stock attribute" do
-      @user.should respond_to(:stock)
+      @user.should respond_to(:stocks)
     end
   end
 
