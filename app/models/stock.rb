@@ -3,6 +3,7 @@ class Stock < ActiveRecord::Base
   validates_presence_of :company_name
   has_many :quotes, :dependent => :destroy
   has_many :watchlists, :foreign_key => "stock_id"
+  has_many :watched, :foreign_key => :watchlists, :source => :watching
   before_save :symbol_upper
   def symbol_upper 
     symbol.upcase!
