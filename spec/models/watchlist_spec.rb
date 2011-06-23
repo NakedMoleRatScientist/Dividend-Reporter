@@ -12,6 +12,20 @@ describe Watchlist do
     @watchlist.save!
   end
 
+  describe "watch methods" do
+    before(:each) do
+      @watchlist.save
+    end
+
+    it "should have a watched attribute" do
+      @watchlist.should respond_to(:watched)
+    end
+
+    it "should have the right watched" do
+      @watchlist.watched.should == @watched
+    end
+  end
+
   describe "validations" do
     it "should require a stock_id" do
       @watchlist.stock_id = nil
