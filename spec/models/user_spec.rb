@@ -42,6 +42,10 @@ describe User do
       @user.watch!(@watched)
       @user.watching.should include(@watched)
     end
+
+    it "should have an unwatch! method" do
+      @user.should respond_to(:unwatch!)
+    end
   end
 
 end
