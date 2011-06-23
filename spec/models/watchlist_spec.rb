@@ -9,7 +9,14 @@ describe Watchlist do
   end
 
   it "should create a new instance given valid attributes" do
-    watch = @watchlist.save
-    watch.should be_valid
+    @watchlist.save!
   end
+
+  describe "validations" do
+    it "should require a stock_id" do
+      @watchlist.stock_id = nil
+      @watchlist.should_not be_valid
+    end
+  end
+
 end
