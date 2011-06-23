@@ -62,6 +62,10 @@ describe Stock do
     it "should have a watched method" do
       @stock.should respond_to(:watched)
     end
+
+    it "shoud have a watched? method" do
+      @stock.should respond_to(:watched?)
+    end
   end
 
 
