@@ -1,2 +1,2 @@
 <h1>Dividend Reporter</h1>
-<%= render @stocks %>
+<%= render :partial => "stock_index", :collection => @stocks, :as => :stock %>
