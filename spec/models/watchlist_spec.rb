@@ -28,6 +28,14 @@ describe Watchlist do
     it "should have the right watching" do
       @watchlist.watching.should == @watching
     end
+
+    it "should have a watched attribute" do
+      @watchlist.should respond_to(:watched)
+    end
+
+    it "" do
+      
+    end
   end
 
   describe "validations" do
