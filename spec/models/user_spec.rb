@@ -46,6 +46,12 @@ describe User do
     it "should have an unwatch! method" do
       @user.should respond_to(:unwatch!)
     end
+
+    it "should unwatch a stock" do
+      @user.watch!(@watched)
+      @user.unwatch!(@watched)
+      @user.should_not be_watching(@watched)
+    end
   end
 
 end
