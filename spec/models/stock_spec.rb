@@ -49,14 +49,18 @@ describe Stock do
     end
   end
 
-  describe "user associations" do
+  describe "watchlist" do
     before(:each) do
-      @user = Factory(:user)
-      @stock = @user.stocks.create(@attr)
+      @stock = Stock.create!(@attr)
+      @watching = Factory(:user)
     end
 
-    it "should have a users attribute" do
-      @stock.should respond_to(:users)
+    it "should have a watchlists attribute" do
+      @stock.should respond_to(:watchlists)
+    end
+
+    it "should have a watched method" do
+      @stock.should respond_to(:watched)
     end
   end
 
