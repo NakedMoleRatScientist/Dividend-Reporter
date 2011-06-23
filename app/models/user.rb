@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :watching, :through => :watchlists, :source => :watched
 
   def watch! watched 
+    
+  end
+
+  def watch? 
     watchlists.find_by_watched_id(watched)
   end
 end
