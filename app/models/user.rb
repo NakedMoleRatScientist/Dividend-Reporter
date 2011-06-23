@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :watching, :through => :watchlists, :source => :watched
 
   def watch! watched 
-    
+    watchlists.create!(:watched_id => watched.id)
   end
 
   def watch? 
