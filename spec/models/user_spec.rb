@@ -14,14 +14,14 @@ describe User do
     User.create!(@attr)
   end
 
-  describe "stock association" do
+  describe "watchlist" do
     before(:each) do
-      @stock = Factory(:stock)
-      @user = @stock.users.create(@attr)
+      @user = User.create!(@attr)
+      @watching = Factory(:user)
     end
 
     it "should have a stock attribute" do
-      @user.should respond_to(:stocks)
+      @user.should respond_to(:watchlists)
     end
   end
 
