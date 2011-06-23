@@ -17,7 +17,7 @@ describe User do
   describe "watchlist" do
     before(:each) do
       @user = User.create!(@attr)
-      @watching = Factory(:user)
+      @watched = Factory(:stock)
     end
 
     it "should have a stock attribute" do
