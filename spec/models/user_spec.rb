@@ -19,6 +19,10 @@ describe User do
       @stock = Factory(:stock)
       @user = @stock.users.create(@attr)
     end
+
+    it "should have a stock attribute" do
+      @quote.should respond_to(:stock)
+    end
   end
 
 end
