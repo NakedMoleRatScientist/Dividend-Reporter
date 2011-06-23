@@ -6,6 +6,6 @@ Given /^I am logged in as an administrator$/ do
   click_button("Login")
 end
 
-Given /^there is a stock with company_name: "([^"]*)"$/ do |arg1|
-  Factory(:stock).company_name = arg1
+Given /^there is a stock with company_name: "([^"]*)"$/ do |company|
+  Factory(:stock, :company_name => company)
 end
