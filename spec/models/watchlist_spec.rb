@@ -17,6 +17,11 @@ describe Watchlist do
       @watchlist.stock_id = nil
       @watchlist.should_not be_valid
     end
+
+    it "should require a user_id" do
+      @watchlist.user_id = nil
+      @watchlist.should_not be_valid
+    end
   end
 
 end
