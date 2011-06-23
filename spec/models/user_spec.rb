@@ -24,8 +24,8 @@ describe User do
       @user.should respond_to(:watchlists)
     end
 
-    it "should have a watch method" do
-      @user.should respond_to(:watch)
+    it "should have a watching method" do
+      @user.should respond_to(:watching)
     end
   end
 
