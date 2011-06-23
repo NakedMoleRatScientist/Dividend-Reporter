@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
     watchlists.create!(:watched_id => watched.id)
   end
 
-  def watch? 
+  def watching? watched 
     watchlists.find_by_watched_id(watched)
   end
 end
