@@ -21,7 +21,7 @@ describe User do
       @watched = Factory(:stock)
     end
 
-    it "should have a stock attribute" do
+    it "should have a watchlists attribute" do
       @user.should respond_to(:watchlists)
     end
 
@@ -52,6 +52,7 @@ describe User do
       @user.unwatch!(@watched)
       @user.should_not be_watching(@watched)
     end
+
   end
 
 end
