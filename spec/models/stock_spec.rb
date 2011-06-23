@@ -71,6 +71,12 @@ describe Stock do
       @watching.watch!(@stock)
       @stock.should be_watched(@watching)
     end
+
+    it "should figure out that it's not being watched" do
+      @watching.watch!(@stock)
+      @watching.unwatch!(@stock)
+      @stock.should_not be_watched(@watching)
+    end
   end
 
 
