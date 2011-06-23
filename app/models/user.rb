@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, :on => :create, :message => "should match confirmation"
   has_many :watchlists, :foreign_key => "watching_id"
   has_many :watching, :through => :watchlists, :source => :watched
+
+  def watch! watched 
+    watchlists.find_by_watched_id(watched)
+  end
 end
