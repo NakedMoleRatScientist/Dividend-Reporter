@@ -1,3 +1,3 @@
 class Watchlist < ActiveRecord::Base
-  attr_accessible :stock_id, :user_id
+  attr_accessible :watched_id, :watching_id
 end
