@@ -9,6 +9,7 @@ describe User do
       :password_confirmation => "foobar",
       :admin => false
     }
+    @watched = Factory(:stock)
   end
   it "should create a user with valid attributes" do
     User.create!(@attr)
