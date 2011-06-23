@@ -32,10 +32,6 @@ describe Watchlist do
     it "should have a watched attribute" do
       @watchlist.should respond_to(:watched)
     end
-
-    it "" do
-      
-    end
   end
 
   describe "validations" do
