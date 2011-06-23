@@ -37,6 +37,11 @@ describe User do
       @user.watch!(@watched)
       @user.should be_watching(@watched)
     end
+
+    it "should include the watched stock in the watching array" do
+      @user.watch!(@watched)
+      @user.watching.should include(@watched)
+    end
   end
 
 end
