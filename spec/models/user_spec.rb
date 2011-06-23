@@ -23,6 +23,10 @@ describe User do
     it "should have a stock attribute" do
       @user.should respond_to(:watchlists)
     end
+
+    it "should have a watch method" do
+      @user.should respond_to(:watch)
+    end
   end
 
 end
