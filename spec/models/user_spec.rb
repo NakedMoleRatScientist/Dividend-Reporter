@@ -34,7 +34,7 @@ describe User do
     end
 
     it "should watch a stock" do
-      @user.watch!(@stock)
+      @user.watch!(@watched)
       @user.should be_watching(@watched)
     end
   end
