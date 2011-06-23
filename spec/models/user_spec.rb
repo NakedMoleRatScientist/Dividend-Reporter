@@ -13,4 +13,12 @@ describe User do
   it "should create a user with valid attributes" do
     User.create!(@attr)
   end
+
+  describe "stock association" do
+    before(:each) do
+      @stock = Factory(:stock)
+      @user = @stock.users.create(@attr)
+    end
+  end
+
 end
