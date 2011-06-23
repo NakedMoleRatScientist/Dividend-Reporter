@@ -29,8 +29,8 @@ describe Watchlist do
       @watchlist.watching.should == @watching
     end
 
-    it "should have a watched attribute" do
-      @watchlist.should respond_to(:watched)
+    it "should have a watching attribute" do
+      @watchlist.should respond_to(:watching)
     end
   end
 
