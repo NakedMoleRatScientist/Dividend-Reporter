@@ -9,6 +9,7 @@ DividendReporter::Application.routes.draw do
   end
   resources :quotes
   resources :user_sessions
+  resources :watchlists
   match 'login' =>  "user_sessions#new", :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
   root :to => 'stocks#index'
