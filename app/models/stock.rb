@@ -9,8 +9,8 @@ class Stock < ActiveRecord::Base
     symbol.upcase!
   end
 
-  def watched? 
-    
+  def watched? watching 
+    watchlists.find_by_watching_id(watching)
   end
 
 end
