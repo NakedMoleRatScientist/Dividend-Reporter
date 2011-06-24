@@ -3,4 +3,8 @@ class WatchlistsController < ApplicationController
   def create 
     
   end
+
+  def destroy 
+    
+  end
 end
