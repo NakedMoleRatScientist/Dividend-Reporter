@@ -4,7 +4,7 @@ DividendReporter::Application.routes.draw do
   resources :stocks
   resources :users do
     member do
-      get :admin
+      get :admin, :watchlist
     end
   end
   resources :quotes
