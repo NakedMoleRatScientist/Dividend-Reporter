@@ -12,6 +12,19 @@ describe WatchlistsController do
       response.should redirect_to root_path
     end
   end
+  describe "POST 'create'" do
+    before(:each) do
+      @user = login_user(Factory(:user))
+      @watched = Factory(:stock)
+    end
+
+    it "should create a watchlist" do
+      lambda do
+        post :create, :watchlist => {:watched_id => @watched}
+        response.should be_redirect
+      end.should change(Watchlist, :count).by(1)
+    end
+  end
 
   
 end
