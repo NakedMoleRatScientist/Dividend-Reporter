@@ -33,6 +33,13 @@ describe WatchlistsController do
       @user.watch!(@watched)
       @watchlist = @user.watchlists.find_by_watched_id(@watched)
     end
+
+    it "should destroy a watchlist" do
+      lambda do
+        delete :destroy, :id => @watchlist
+        response.should be_redirect
+      end.should change(Watchlist, :count).by(-1)
+    end
   end
 
 
