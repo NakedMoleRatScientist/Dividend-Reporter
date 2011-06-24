@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110620161227) do
+ActiveRecord::Schema.define(:version => 20110623165144) do
 
   create_table "quotes", :force => true do |t|
     t.integer  "stock_id"
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(:version => 20110620161227) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+  end
+
+  create_table "watchlists", :force => true do |t|
+    t.integer  "watched_id"
+    t.integer  "watching_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
