@@ -13,6 +13,6 @@ class WatchlistsController < ApplicationController
   end
 
   def show 
-    
+    @watchlists = User.find_by_id(params[:id]).watchlists
   end
 end
