@@ -49,7 +49,12 @@ describe WatchlistsController do
   end
 
   describe "GET 'show'" do
-    
+    before(:each) do
+      @user = Factory(:user)
+      login_user(@user)
+      @watched = Factory(:stock)
+      @user.watch!(@watched)
+    end    
   end
 
 
