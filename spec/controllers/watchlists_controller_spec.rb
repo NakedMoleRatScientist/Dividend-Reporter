@@ -43,6 +43,10 @@ describe WatchlistsController do
     end
   end
 
+  describe "GET 'show'" do
+    
+  end
+
 
   
 end
