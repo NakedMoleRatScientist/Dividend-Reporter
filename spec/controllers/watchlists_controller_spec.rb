@@ -11,6 +11,11 @@ describe WatchlistsController do
       delete :destroy, :id => 1
       response.should redirect_to root_path
     end
+
+    it "should require login for show" do
+      get 'show'
+      response.should redirect_to root_path
+    end
   end
   describe "POST 'create'" do
     before(:each) do
