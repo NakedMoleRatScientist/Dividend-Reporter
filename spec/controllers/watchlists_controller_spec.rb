@@ -26,5 +26,15 @@ describe WatchlistsController do
     end
   end
 
+  describe "DELETE 'destroy'" do
+    before(:each) do
+      @user = login_user(Factory(:user))
+      @watched = Factory(:stock)
+      @user.watch!(@watched)
+      @watchlist = @user.watchlists.find_by_watched_id(@watched)
+    end
+  end
+
+
   
 end
