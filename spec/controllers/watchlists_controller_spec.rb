@@ -61,10 +61,6 @@ describe WatchlistsController do
       response.should be_success
     end
 
-    it "should show a stock" do
-      get 'show', :id => @user.id
-      response.should have_selector(:a, :content => "Google Inc.")
-    end
   end
 
 
