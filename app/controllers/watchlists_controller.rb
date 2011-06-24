@@ -7,7 +7,9 @@ class WatchlistsController < ApplicationController
   end
 
   def destroy 
-    
+    @watched = Watchlist.find(params[:id]).watched
+    current_user.unwatch!(@watched)
+    redirect_to watchlist_path(current_user.id)
   end
 
   def show 
