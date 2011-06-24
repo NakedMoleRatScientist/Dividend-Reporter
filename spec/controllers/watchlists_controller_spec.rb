@@ -54,7 +54,12 @@ describe WatchlistsController do
       login_user(@user)
       @watched = Factory(:stock)
       @user.watch!(@watched)
-    end    
+    end
+
+    it "should be successful" do
+      get 'show', :id => @user.id
+      response.should be_success
+    end
   end
 
 
