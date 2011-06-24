@@ -3,7 +3,7 @@ class WatchlistsController < ApplicationController
   def create 
     @watched = User.find(params[:watchlist][:watched_id])
     current_user.watch!(@watched)
-    redirect_to watchlist_user_path
+    redirect_to watchlist_path
   end
 
   def destroy 
