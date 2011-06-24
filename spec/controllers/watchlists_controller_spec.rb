@@ -13,7 +13,7 @@ describe WatchlistsController do
     end
 
     it "should require login for show" do
-      get 'show'
+      get 'show', :id => 1
       response.should redirect_to root_path
     end
   end
